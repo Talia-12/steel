@@ -20,7 +20,7 @@ pub use im_shims::{
 
 #[cfg(not(feature = "sync"))]
 mod im_shims {
-    use std::hash::RandomState;
+    use std::collections::hash_map::RandomState;
 
     pub type Vector<T> = im_rc::Vector<T>;
     pub type HashMap<K, V, S = RandomState> = im_rc::HashMap<K, V, S>;
@@ -33,7 +33,7 @@ mod im_shims {
 
 #[cfg(feature = "sync")]
 mod im_shims {
-    use std::hash::RandomState;
+    use std::collections::hash_map::RandomState;
 
     pub type Vector<T> = im::Vector<T>;
     pub type HashMap<K, V, S = RandomState> = im::HashMap<K, V, S>;
