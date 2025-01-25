@@ -27,5 +27,5 @@ mkShell {
       CoreServices
       SystemConfiguration
     ];
-    inputsFrom = steel;
+    inputsFrom = [ steel ];
 }
